@@ -2,11 +2,9 @@
 
 import { FrameWrapper } from '@/components/FrameWrapper';
 import { HabitDashboard } from '@/components/HabitDashboard';
-import { useMiniKit } from '@coinbase/minikit';
 import { useEffect, useState } from 'react';
 
 export default function HomePage() {
-  const { context } = useMiniKit();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -36,7 +34,7 @@ export default function HomePage() {
 
   return (
     <FrameWrapper>
-      <HabitDashboard userId={context?.user?.fid?.toString()} />
+      <HabitDashboard />
     </FrameWrapper>
   );
 }
