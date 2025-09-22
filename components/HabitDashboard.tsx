@@ -97,8 +97,8 @@ export function HabitDashboard({ userId = 'user1' }: HabitDashboardProps) {
     ).length;
   };
 
-  const isHabitLoggedToday = (habit: Habit) => {
-    return habit.streakMetadata.lastLoggedDate && isToday(habit.streakMetadata.lastLoggedDate);
+  const isHabitLoggedToday = (habit: Habit): boolean => {
+    return !!(habit.streakMetadata.lastLoggedDate && habit.streakMetadata.lastLoggedDate !== '' && isToday(habit.streakMetadata.lastLoggedDate));
   };
 
   const getHabitVariant = (habit: Habit) => {
