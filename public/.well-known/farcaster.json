@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "HabitFlow",
+    "subtitle": "Built with Zara",
+    "description": "HabitFlow is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://c0060dcbba5d4de7b112c66b552b6435-2g9n.vercel.app",
+    "splashImageUrl": "https://c0060dcbba5d4de7b112c66b552b6435-2g9n.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://c0060dcbba5d4de7b112c66b552b6435-2g9n.vercel.app/image.png",
+    "tagline": "HabitFlow",
+    "screenshotUrls": [
+      "https://c0060dcbba5d4de7b112c66b552b6435-2g9n.vercel.app/screenshot.png",
+      "https://c0060dcbba5d4de7b112c66b552b6435-2g9n.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://c0060dcbba5d4de7b112c66b552b6435-2g9n.vercel.app/api/webhook"
+  }
+}
