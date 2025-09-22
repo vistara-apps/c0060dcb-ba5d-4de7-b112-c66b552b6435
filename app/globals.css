@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: hsl(220 13% 95%);
+  --text: hsl(220 13% 20%);
+  --accent: hsl(130 70% 55%);
+  --border: hsl(220 13% 85%);
+  --primary: hsl(210 100% 50%);
+  --surface: hsl(220 13% 100%);
+}
+
+.dark {
+  --bg: hsl(220 13% 9%);
+  --text: hsl(220 13% 85%);
+  --accent: hsl(130 70% 55%);
+  --border: hsl(220 13% 20%);
+  --primary: hsl(210 100% 50%);
+  --surface: hsl(220 13% 12%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-streak {
+    animation: streak-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes streak-glow {
+    0% {
+      box-shadow: 0 0 5px hsl(130 70% 55% / 0.5);
+    }
+    100% {
+      box-shadow: 0 0 20px hsl(130 70% 55% / 0.8), 0 0 30px hsl(130 70% 55% / 0.4);
+    }
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(130 70% 55%), hsl(210 100% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
