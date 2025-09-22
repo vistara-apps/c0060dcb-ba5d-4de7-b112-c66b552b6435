@@ -1,9 +1,10 @@
 export interface User {
+  id: string;
   farcasterId: string;
   displayName: string;
   profilePicture?: string;
   activeHabits: string[];
-  achievedBadges: string[];
+  achievedBadges: string; // JSON string containing badge IDs
 }
 
 export interface Habit {
@@ -14,11 +15,7 @@ export interface Habit {
   goal: string;
   startDate: string;
   isActive: boolean;
-  streakMetadata: {
-    currentStreak: number;
-    longestStreak: number;
-    lastLoggedDate?: string;
-  };
+  streakMetadata: string; // JSON string containing streak data
   category: 'health' | 'productivity' | 'learning' | 'social' | 'creative';
   icon: string;
 }

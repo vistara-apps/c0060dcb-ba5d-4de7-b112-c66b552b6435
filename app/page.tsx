@@ -2,20 +2,20 @@
 
 import { FrameWrapper } from '@/components/FrameWrapper';
 import { HabitDashboard } from '@/components/HabitDashboard';
-import { useMiniKit } from '@coinbase/minikit';
 import { useEffect, useState } from 'react';
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
-  const { context } = useMiniKit();
+  const [userId, setUserId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time for better UX
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    // For demo purposes, we'll use a mock user ID
+    // In a real Farcaster frame, this would come from MiniKit context
+    const mockUserId = 'demo-user-123';
+    setUserId(mockUserId);
+    setIsLoading(false);
   }, []);
 
   if (isLoading) {
@@ -36,7 +36,7 @@ export default function HomePage() {
 
   return (
     <FrameWrapper>
-      <HabitDashboard userId={context?.user?.fid?.toString()} />
+      <HabitDashboard userId={userId || 'anonymous'} />
     </FrameWrapper>
   );
 }

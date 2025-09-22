@@ -60,11 +60,11 @@ export const SAMPLE_HABITS: Habit[] = [
     goal: '8 glasses',
     startDate: '2024-01-01',
     isActive: true,
-    streakMetadata: {
+    streakMetadata: JSON.stringify({
       currentStreak: 12,
       longestStreak: 15,
       lastLoggedDate: '2024-01-12'
-    },
+    }),
     category: 'health',
     icon: '💧'
   },
@@ -76,11 +76,11 @@ export const SAMPLE_HABITS: Habit[] = [
     goal: '30 minutes',
     startDate: '2024-01-01',
     isActive: true,
-    streakMetadata: {
+    streakMetadata: JSON.stringify({
       currentStreak: 8,
       longestStreak: 10,
       lastLoggedDate: '2024-01-11'
-    },
+    }),
     category: 'learning',
     icon: '📚'
   },
@@ -92,11 +92,11 @@ export const SAMPLE_HABITS: Habit[] = [
     goal: '30 minutes',
     startDate: '2024-01-01',
     isActive: true,
-    streakMetadata: {
+    streakMetadata: JSON.stringify({
       currentStreak: 5,
       longestStreak: 7,
       lastLoggedDate: '2024-01-10'
-    },
+    }),
     category: 'health',
     icon: '🏃'
   }
