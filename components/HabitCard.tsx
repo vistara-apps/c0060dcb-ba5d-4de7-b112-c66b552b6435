@@ -23,7 +23,8 @@ export function HabitCard({
   isLoggedToday = false 
 }: HabitCardProps) {
   const category = HABIT_CATEGORIES[habit.category];
-  const streakEmoji = getStreakEmoji(habit.streakMetadata.currentStreak);
+  const metadata = JSON.parse(habit.streakMetadata);
+  const streakEmoji = getStreakEmoji(metadata.currentStreak);
   
   const variants = {
     active: 'border-dark-border hover:border-accent/50 transition-colors duration-200',
@@ -35,7 +36,7 @@ export function HabitCard({
   const getProgressPercentage = () => {
     if (variant === 'completed') return 100;
     if (variant === 'missed') return 0;
-    return isLoggedToday ? 100 : (habit.streakMetadata.currentStreak > 0 ? 75 : 25);
+    return isLoggedToday ? 100 : (metadata.currentStreak > 0 ? 75 : 25);
   };
 
   const getStatusIcon = () => {
@@ -81,16 +82,16 @@ export function HabitCard({
             </ProgressRing>
             <div>
               <div className="text-2xl font-bold gradient-text">
-                {habit.streakMetadata.currentStreak}
+                {metadata.currentStreak}
               </div>
               <div className="text-xs text-gray-400">day streak</div>
             </div>
           </div>
-          
+
           <div className="text-right">
             <div className="text-sm text-gray-400">Best</div>
             <div className="text-lg font-semibold text-dark-text">
-              {habit.streakMetadata.longestStreak}
+              {metadata.longestStreak}
             </div>
           </div>
         </div>
